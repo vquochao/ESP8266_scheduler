@@ -180,8 +180,8 @@ BLYNK_CONNECTED() {
   // The immidiate activation should not be sync when connecting
   //  instead we use the VP_END_TIME_SCHD0 to save what ever previous end times there ware
   for (int i = 0; i<TIME_CNT*SCHEDULER_CNT ; i++) Blynk.syncVirtual(VP_SWCH0_TIME0+i);
-  for (int i = 0; i<SCHEDULER_CNT ; i++) Blynk.syncVirtual(VP_ACTV_DUR_SCHD0+i);
-  for (int i = 0; i<SCHEDULER_CNT ; i++) Blynk.syncVirtual(VP_MAX_DUR_SCHD0+i);
+  for (int i = 0; i<TIME_CNT*SCHEDULER_CNT ; i++) Blynk.syncVirtual(VP_ACTV_DUR_SCHD0+i);
+  for (int i = 0; i<TIME_CNT*SCHEDULER_CNT ; i++) Blynk.syncVirtual(VP_MAX_DUR_SCHD0+i);
   Blynk.syncVirtual(VP_SLEEP_SYS);
   Blynk.syncVirtual(VP_DISBL_SYS);
   Blynk.syncVirtual(VP_DISBL_DAYS);
